@@ -19,6 +19,8 @@ user = "ab cd"               #replace it with actual user name
 # Hardcoded test data
 website = 'https://www.pinterest.com/login/'
 
+
+
 #test case 1
 try:
     # image_path = '/path/to/your/image.jpg'
@@ -137,7 +139,6 @@ try:
     except Exception as e:
         print(f"An error occurred while deleting pin - {e}")
 
-
 finally:
     # Step 5: Close the browser session
     logout_path1 = '//div[@data-test-id="header-accounts-options-button"]'
@@ -153,6 +154,7 @@ finally:
     print("Log out successful ")
     driver.quit()
     print("Closed the browser session")
+
 
 
 #test case 2
@@ -378,6 +380,8 @@ finally:
     driver.quit()
     print("Closed the browser session")
 
+
+
 #test case 5
 def login_and_test_accounts_options_button(driver, email, password):
     try:
@@ -454,7 +458,6 @@ def login_and_test_accounts_options_button(driver, email, password):
         # End the session
         driver.quit()
         print("Closed the browser session")
-
 
 # Call the function to login and test the "Accounts and more options" button
 login_and_test_accounts_options_button(driver, username, password)
@@ -535,11 +538,10 @@ def login_and_test_notifications_icon(driver, email, password):
         driver.quit()
         print("Closed the browser session")
 
-
-
-
 # Call the function to login and test the "Notifications" icon
-# login_and_test_notifications_icon(driver, username, password)
+login_and_test_notifications_icon(driver, username, password)
+
+
 
 #test case 7
 def login_and_test_profile_page(driver, email, password):
@@ -622,7 +624,6 @@ def login_and_test_profile_page(driver, email, password):
         print("Log out successful ")
         driver.quit()
         print("Closed the browser session")
-
 
 # Call the function to login and test the profile page
 login_and_test_profile_page(driver, username, password)
@@ -1017,6 +1018,8 @@ finally:
     driver.quit()
     print("Closed the browser session")
 
+
+
 #test case 12
 def login_and_test_messages_icon(driver, email, password):
     try:
@@ -1396,10 +1399,10 @@ def test_about_button(driver):
         driver.switch_to.window(main_window)
         print("Closed the new tab and switched back to the main window")
 
-
-
 # Call the function to test the About button
 test_about_button(driver)
+
+
 
 #test case 17
 def test_blog_button(driver):
@@ -1449,10 +1452,10 @@ def test_blog_button(driver):
         driver.switch_to.window(main_window)
         print("Closed the new tab and switched back to the main window")
 
-
-
 # Call the function to test the Blog button
 test_blog_button(driver)
+
+
 
 #test case 18
 def test_businesses_button(driver):
@@ -1501,8 +1504,6 @@ def test_businesses_button(driver):
         driver.close()
         driver.switch_to.window(main_window)
         print("Closed the new tab and switched back to the main window")
-
-
 
 # Call the function to test the Businesses button
 test_businesses_button(driver)
@@ -1582,6 +1583,8 @@ finally:
     driver.quit()
     print("Closed the browser session")
 
+
+
 #test case 20
 def test_today_button(driver):
     try:
@@ -1622,10 +1625,10 @@ def test_today_button(driver):
         driver.quit()
         print("Closed the browser session")
 
-
-
 # Call the function to test the Today button
 test_today_button(driver)
+
+
 
 #test case 21
 def test_watch_button(driver):
