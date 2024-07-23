@@ -19,11 +19,11 @@ user = "ab cd"               #replace it with actual user name
 # Hardcoded test data
 website = 'https://www.pinterest.com/login/'
 
+image_path = r'/path/to/your/image.jpg'     #replace it with actual image path
 
 
 #test case 1
 try:
-    # image_path = '/path/to/your/image.jpg'
     # pin_title = 'Test Pin'
     # pin_description = 'This is a test pin created by Selenium.'
 
@@ -73,8 +73,6 @@ try:
         profile_icon.click()
         print("Navigated to 'Profile' page")
         time.sleep(5)
-
-
 
         # Locate and click the "Created" link
         created_link_xpath = '//a[contains(@href, "/{pid}/_created/") and contains(@class, "Wk9 xQ4 S9z DUt CCY kVc Tbt L4E e8F BG7")]'
@@ -265,7 +263,6 @@ finally:
 #test case 4
 try:
     driver = webdriver.Chrome()
-    # print("I am trying pin publish")
     # image_path = '/path/to/your/image.jpg'
     pin_title = 'Test Pin'
     # pin_description = 'This is a test pin created by Selenium.'
@@ -333,7 +330,7 @@ try:
         image_upload_button = WebDriverWait(driver, 30).until(
             EC.presence_of_element_located((By.XPATH, image_upload_button_xpath))
         )
-        image_upload_button.send_keys(r"C:\Users\ketan\OneDrive\Desktop\test.png")
+        image_upload_button.send_keys(img_path)
         print("Uploaded image")
         time.sleep(10)  # Increased wait time for image upload
 
