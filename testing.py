@@ -19,7 +19,7 @@ user = "Ab Cd"                 #replace it with actual user name
 # Hardcoded test data
 website = 'https://www.pinterest.com/login/'
 
-img_path = r"C:\Users\ketan\OneDrive\Desktop\test.png"     #replace it with actual image path
+img_path = r"path/to/image"     #replace it with actual image path
 
 
 try:
