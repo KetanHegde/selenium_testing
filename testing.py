@@ -15,7 +15,6 @@ password = 'abcd&88'       #replace it with actual password
 pid = 'abcd'                 #replace it with actual pinterest id
 user = "Ab Cd"                 #replace it with actual user name
 
-
 # Hardcoded test data
 website = 'https://www.pinterest.com/login/'
 
@@ -23,8 +22,6 @@ img_path = r"path/to/image"     #replace it with actual image path
 
 
 try:
-    # pin_title = 'Test Pin'
-    # pin_description = 'This is a test pin created by Selenium.'
 
     # Step 1: Navigate to the website
     driver.get(website)
@@ -123,16 +120,21 @@ try:
     try:
         time.sleep(5)
         print("Navigating to home page")
-        # driver.get('https://www.pinterest.com/')
+        driver.get('https://www.pinterest.com/')
+        # profile_icon = WebDriverWait(driver, 30).until(
+        #     EC.element_to_be_clickable((By.XPATH, f"//a[@href='/{pid}/'"))
+        # )
         profile_icon = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, f"//a[@href='/{pid}/' and contains(@class, 'Wk9') and contains(@class, 'S9z')]"))
+            EC.element_to_be_clickable((By.XPATH, f"//a[@href='/{pid}/']"))
         )
+
         profile_icon.click()
         print("Navigated to 'Profile' page")
         time.sleep(5)
 
         # Locate and click the "Created" link
-        created_link_xpath = f'//a[contains(@href, "/{pid}/_created/") and contains(@class, "Wk9 xQ4 S9z DUt CCY kVc Tbt L4E e8F BG7")]'
+        # created_link_xpath = f'//a[contains(@href, "/{pid}/_created/") and contains(@class, "Wk9 xQ4 S9z DUt CCY kVc Tbt L4E e8F BG7")]'
+        created_link_xpath = f'//a[contains(@href, "/{pid}/_created/")]'
         created_link = WebDriverWait(driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, created_link_xpath))
         )
@@ -266,7 +268,7 @@ try:
         driver.get('https://www.pinterest.com/')
         time.sleep(10)
         profile_icon = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, f"//a[@href='/{pid}/' and contains(@class, 'Wk9') and contains(@class, 'S9z')]"))
+            EC.element_to_be_clickable((By.XPATH, f"//a[@href='/{pid}/']"))
         )
         profile_icon.click()
         print("Clicked 'Profile' icon")
